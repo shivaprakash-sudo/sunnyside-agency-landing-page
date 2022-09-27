@@ -22,12 +22,16 @@
       rel="stylesheet"
     />
 
+    <!-- <style>
+      * {
+        outline: 1px solid green;
+      }
+    </style> -->
+
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- custom configuration of tailwind -->
     <script>
-      const defaultTheme = require("tailwindcss/defaultTheme");
-
       tailwind.config = {
         theme: {
           extend: {
@@ -48,8 +52,8 @@
               },
             },
             fontFamily: {
-              barlow: ["Barlow", ...defaultTheme.fontFamily.sans],
-              fraunces: ["Fraunces", ...defaultTheme.fontFamily.serif],
+              sans: ["Barlow", "sans-serif"],
+              serif: ["Fraunces", "serif"],
             },
           },
         },
@@ -58,22 +62,41 @@
   </head>
   <body>
     <main>
-      <header>
-        <a href="/index.html"><img src="./images/logo.svg" alt="logo" /></a>
-        <nav>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
+      <header
+        class="bg-[url('./images/mobile/image-header.jpg')] bg-no-repeat bg-cover"
+      >
+        <nav class="relative w-[90%] mx-auto flex justify-between py-8">
+          <a href="/index.html"><img src="./images/logo.svg" alt="logo" /></a>
+          <div class="hover:cursor-pointer">
+            <img src="./images/icon-hamburger.svg" alt="" aria-hidden="true" />
+          </div>
+          <div
+            class="absolute bg-white w-full top-24 py-8 flex flex-col items-center gap-5 text-neutral-500 text-lg font-semibold hidden"
+          >
+            <a class="hover:underline" href="#">About</a>
+            <a class="hover:underline" href="#">Services</a>
+            <a class="hover:underline" href="#">Projects</a>
+            <a
+              class="text-black font-serif uppercase bg-primary-yellow rounded-full py-3 px-8 hover:opacity-[80%]"
+              href="#"
+              >Contact</a
+            >
+          </div>
         </nav>
-        <section>
-          <h1>We are creatives</h1>
-          <a href="#"
+        <section
+          class="w-[90%] mx-auto pt-8 pb-[6rem] flex flex-col gap-16 items-center"
+        >
+          <h1
+            class="uppercase tracking-[0.2em] leading-tight text-center text-white text-[2.5rem] font-serif font-black"
+          >
+            We are creatives
+          </h1>
+          <a href="#transform-brand"
             ><img src="./images/icon-arrow-down.svg" alt="big arrow to go down"
           /></a>
         </section>
       </header>
-      <section>
+      <section id="#transform-brand">
         <div></div>
         <h2>Transform your brand</h2>
         <p>
